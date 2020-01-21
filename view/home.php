@@ -537,9 +537,14 @@
 					foreach ($vdos as $key => $value) {
 						$get_cat_vdo	.=	$value['id'].',';
 					}
+					// echo '<pre>';
+					// print_r($_SESSION);
+					// echo '</pre>';
+					// echo $_SESSION['lang_id'];
 					$get_cat_vdo = substr($get_cat_vdo, 0,-1).')';
 					$vdos = $obj_db->getdata('content INNER JOIN sl_language_detail ON sl_content.id = sl_language_detail.ref_id',$get_cat_vdo.' and del = 0 and hide = 0 and type = 1 and language_id = 1 order by sl_content.id desc','','','3');
-					// print_r($vdos); exit();
+					// print_r($vdos); 
+					//exit(); 
 
 					// $vdos_temp = array();
 					// foreach ($vdos as $key => $value) {
@@ -554,7 +559,12 @@
 					// $vdos = $vdos_temp;
 					foreach ($vdos->rows as $key => $value) { ?>
 						<div class="col-md-4 text-center">
+							<?php $pic = $_SESSION['lang']=='th'?$value['picture1']:$value['picture1_en']; ?>
+							<?php if (!empty($pic)) { ?>
+							<img src="upload/content/<?php echo $pic; ?>" alt="" style="width:100%;">
+							<?php } else { ?>
 							<div class="pretty-embed" data-pe-videoid="<?php echo $value['link_url']; ?>" data-pe-fitvids="true"></div>
+							<?php } ?>
 							<label for=""><?php echo $value['name']; ?></label>
 						</div>
 					<?php } ?>

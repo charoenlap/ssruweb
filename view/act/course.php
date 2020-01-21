@@ -24,7 +24,21 @@
 	<section class="wow fadeInUp" data-wow-duration="2s">
 		<img src="<?php echo $mdir.'upload/content/'.$lugsood->row['picture2']; ?>" alt="" class="w-100">
 	</section>
-
+<?php 
+	$event = $obj_db->cat('ref_id = '.$head_cat[1]['id'].$hide_del_lan_order)->row;
+	// print_r($head_cat[0]['lang_name']); ?>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 pt-4 pb-4 text-center">
+					<h5 class="text-uppercase"><?php echo $head_cat[0]['lang_name']; ?></h5>
+					<p class="mb-0"><?php echo cut_tag_p($event['detail']); ?> 
+					<!-- <a href="<?php echo route('act/news-detail','id='.$event['id']); ?>"> <?php echo $lan['read_more']; ?></a> -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- <section class="position-relative wow fadeInUp" data-wow-duration="1s">
 		<img src="assets/act/images/bg_course1.jpg" alt="" class="w-100">

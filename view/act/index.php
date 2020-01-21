@@ -81,7 +81,7 @@
 			<a href="<?php echo route('act/course'); ?>"><?php echo $lan['read_more']; ?></a>
 		</div>
 	</section>
-	<?php 
+	<!-- <?php 
 	$event = $obj_db->cat('ref_id = '.$head_cat[1]['id'].$hide_del_lan_order)->row;
 	// print_r($head_cat[0]['lang_name']); ?>
 	<section>
@@ -93,7 +93,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<?php 
 	// print_r($home_con); ?>
 	<section class="bg-calendar-in">
